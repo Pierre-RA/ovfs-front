@@ -1,0 +1,9 @@
+<div class="header">
+  <h1>Welcome to {{ title }}</h1>
+  <ul>
+    <li>
+      <a mat-button color="primary" href="#" (click)="signOut($event)" *ngIf="(authentication | async)">Sign Out</a>
+    </li>
+  </ul>
+</div>
+

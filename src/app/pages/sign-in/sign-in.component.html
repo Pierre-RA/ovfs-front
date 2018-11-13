@@ -1,0 +1,17 @@
+<div class="sign-in">
+  <mat-card>
+    <form>
+      <h2>Sign In</h2>
+      <mat-form-field>
+        <input matInput placeholder="Email">
+      </mat-form-field>
+      <mat-form-field>
+          <input matInput placeholder="Password" type="password">
+      </mat-form-field>
+      <div class="button-group">
+        <a mat-raised-button routerLink="/sign-up">Sign Up</a>
+        <button mat-raised-button color="primary" (click)="signIn()">Sign In</button>
+      </div>
+    </form>
+  </mat-card>
+</div>

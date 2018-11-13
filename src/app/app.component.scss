@@ -1,0 +1,14 @@
+.app {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template:
+    "head" 100px
+    "content" 1fr / 1fr;
+  .header {
+    grid-area: head;
+  }
+  .wrapper {
+    grid-area: content;
+  }
+}

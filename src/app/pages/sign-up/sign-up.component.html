@@ -1,0 +1,20 @@
+<div class="sign-up">
+  <mat-card>
+    <form>
+      <h2>Register to {{title}}</h2>
+      <mat-form-field>
+        <input matInput placeholder="Email">
+      </mat-form-field>
+      <mat-form-field>
+          <input matInput placeholder="Password" type="password">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Confirm Password" type="password">
+      </mat-form-field>
+      <div class="button-group">
+        <a mat-raised-button routerLink="/sign-in">Sign In</a>
+        <button mat-raised-button color="primary" (click)="signUp()">Sign Up</button>
+      </div>
+    </form>
+  </mat-card>
+</div>
