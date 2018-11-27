@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css?family=Orbitron');
+
+.gene {
+  position: relative;
+  &-card {
+    width: 100px;
+    text-align: center;
+    cursor: pointer;
+    &:hover {
+      background: rgba(215,215,215,0.5);
+    }
+  }
+  .green {
+    background: rgba(76,255,110,0.5);
+    &:hover {
+      background: rgba(56, 235, 90, 0.5);
+    }
+  }
+  .show {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    z-index: 1;
+    width: 150px;
+    h2 {
+      margin: 0;
+      padding: 0;
+      margin-block-start: 0;
+      margin-block-end: 0;
+    }
+    .top-right {
+      position: absolute;
+      top: 10px;
+      right: 0;
+    }
+    &-container {
+      display: grid;
+      grid-template: 1fr / 1fr 1fr;
+      gap: 5px;
+      p {
+        padding: 0;
+        margin: 0;
+        text-align: center;
+        &.score {
+          font-weight: bold;
+          font-family: 'Orbitron', sans-serif;
+        }
+      }
+    }
+  }
+}

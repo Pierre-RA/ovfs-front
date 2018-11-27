@@ -1,0 +1,26 @@
+<div class="gene">
+  <mat-card (click)="toggleResume()" class="gene-card" [ngClass]="{ green: hasWon }">
+    {{gene.name}}
+  </mat-card>
+  <mat-card class="show" *ngIf="show">
+    <button mat-icon-button (click)="toggleResume()" class="top-right">
+      <i class="material-icons">close</i>
+    </button>
+    <h2>{{gene.name}}</h2>
+    <div class="show-container">
+      <p>height</p>
+      <p>weight</p>
+      <p class="score">{{gene.height | number:'1.1-1'}}</p>
+      <p class="score">{{gene.weight | number:'1.1-1'}}</p>
+      <p>health</p>
+      <p>strength</p>
+      <p class="score">{{gene.health | number:'1.0-0'}}</p>
+      <p class="score">{{gene.strength | number:'1.1-1'}}</p>
+      <p>agility</p>
+      <p>attacks</p>
+      <p class="score">{{gene.agility | number:'1.1-1'}}</p>
+      <p class="score">{{gene.attacks | number:'1.0-0'}}</p>
+    </div>
+  </mat-card>
+</div>
+

@@ -1,16 +1,30 @@
 .dashboard {
   width: 100%;
   height: 100%;
-  display: grid;
-  grid-template-areas: "a";
   mat-card {
-    grid-area: a;
     align-self: center;
     justify-self: center;
     width: 80%;
-    height: 400px;
+    margin: 20px auto;
     p {
       text-align: justify;
+    }
+  }
+  table {
+    td {
+      min-width: 80px;
+    }
+  }
+  .round {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    justify-items: center;
+    align-items: center;
+    justify-content: space-evenly;
+    .match {
+      width: 200px;
+      text-align: center;
     }
   }
 }

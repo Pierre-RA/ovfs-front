@@ -1,9 +1,42 @@
 <div class="dashboard">
-  <mat-card>
+  <!-- <mat-card>
     <h2>Dashboard</h2>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vitae finibus dui, vel commodo mauris. Praesent in mi at metus imperdiet dictum. Donec condimentum mi ex, eget lobortis eros porttitor in. Ut interdum faucibus lectus, at cursus sem aliquet ut. Aliquam suscipit pharetra facilisis. Praesent semper elementum facilisis. Sed vestibulum enim velit, sit amet hendrerit lacus fermentum at. Duis elit enim, rhoncus et neque ac, tempus commodo est. Curabitur vulputate mollis commodo. In ultricies enim ultrices ante porttitor feugiat iaculis ac velit. Morbi vel nulla interdum, gravida ipsum sed, ultricies turpis.
-    </p>
-  </mat-card>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th style="text-align: right">Height</th>
+        <th style="text-align: right">Weight</th>
+        <th style="text-align: right">BMI</th>
+        <th style="text-align: right">Health</th>
+        <th style="text-align: right">Strength</th>
+        <th style="text-align: right">Agility</th>
+        <th style="text-align: right">Intelligence</th>
+      </tr>
+      <tr *ngFor="let gene of tournament.playerList">
+        <td>{{gene.name}}</td>
+        <td style="text-align: right">{{gene.height | number:'1.1-1'}}</td>
+        <td style="text-align: right">{{gene.weight | number:'1.1-1'}}</td>
+        <td style="text-align: right" [ngStyle]="{ color: gene.bmi < 19 ? 'red' : 'black'}">{{gene.bmi | number:'1.1-1'}}</td>
+        <td style="text-align: right">{{gene.health | number:'1.0-0'}}</td>
+        <td style="text-align: right">{{gene.strength | number:'1.1-1'}}</td>
+        <td style="text-align: right">{{gene.agility | number:'1.1-1'}}</td>
+        <td style="text-align: right">{{gene.attacks | number:'1.0-0'}}</td>
+      </tr>
+    </table>
+  </mat-card> -->
+  <mat-progress-spinner
+    class="loading"
+    mode="indeterminate"
+    *ngIf="loading"
+  >
+  </mat-progress-spinner>
+  <ng-container *ngIf="!loading">
+      <mat-card *ngFor="let round of rounds; let i = index">
+          <h3>Round {{i + 1}}</h3>
+          <div class="round">
+            <app-gene *ngFor="let el of round" [gene]="el.gene" [hasWon]="el.winner"></app-gene>
+          </div>
+        </mat-card>
+  </ng-container>
 </div>
 
